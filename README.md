@@ -30,16 +30,17 @@ A static, no-build website (plain HTML/CSS/JS) ready to push to GitHub and deplo
 
 ## Page structure (matches the latest wireframe)
 
-1. **Header** — logo on the left, right next to the nav (Home first), with Say Hi / Get Started on the right
+1. **Header** — logo on the left, next to the nav (Home first); "Say Hi" is plain text, "Book a Call" is the only button
 2. **Hero** — 10-slide auto-playing crossfade carousel behind the centered headline, subtext, and buttons (pauses on hover, has dot controls, respects reduced-motion preference)
-3. **About + Why Choose Us** — left: heading with a stacked pair of images; right: eyebrow, intro paragraph, 2×2 process grid
+3. **About** — centered heading ("We are a creative interior and architect studio company") with a stacked pair of images below it
 4. **Our Services** — dark band with 4 service cards
-5. **Stats** — 4 stat icons/numbers that count up into view as you scroll
+5. **Stats** — 3 stat icons/numbers (Awards Winner, Skilled Workforce, Years of Experience) that count up into view as you scroll
 6. **Projects** — heading + single "All Projects" link + 3×2 project grid
 7. **Featured Work** — centered intro copy + full-width banner image with a play-button overlay
-8. **Testimonials** — 3 client quote cards
-9. **Contact** — centered "Get Started Today" heading, then an image and form of matching height and width side by side
-10. **Footer** — 5 columns: brand (larger square logo), Quick Links, Services, Follow Us On (Instagram / Facebook / Google icon circles), Contact Us
+8. **Contact** — centered "Get Started Today" heading, then an equally sized image and form (Name, Phone, Email only) with a "Book a Call" button
+9. **Footer** — 5 columns: brand (larger square logo), Quick Links, Services, Follow Us On (Instagram / Facebook / Google icon circles), Contact Us
+
+Note: the Testimonials section and the Floor Configuration / Budget Range form fields have been removed per the latest wireframe.
 
 ## Animation notes
 
