@@ -16,16 +16,23 @@
 <!-- ===================== HEADER ===================== -->
 <header class="site-header">
   <div class="container header-top">
-    <nav class="main-nav" id="mainNav">
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#services">Our Services</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#contact">Contact Us</a></li>
-      </ul>
-    </nav>
+    <div class="header-left">
+      <a href="#home" class="logo">
+        <!-- REPLACE assets/images/logo.svg with your client's logo file -->
+        <img src="assets/images/logo.svg" alt="Ameerah Design Studio">
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Our Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
 
     <div class="header-actions">
       <a href="#contact" class="btn btn-outline btn-small">Say Hi</a>
@@ -36,19 +43,24 @@
       <span></span><span></span><span></span>
     </button>
   </div>
-
-  <div class="container header-logo-row">
-    <a href="#" class="logo">
-      <!-- REPLACE assets/images/logo.svg with your client's logo file -->
-      <img src="assets/images/logo.svg" alt="Ameerah Design Studio">
-    </a>
-  </div>
 </header>
 
 <!-- ===================== HERO ===================== -->
 <section class="hero" id="home">
   <div class="hero-media">
-    <img src="assets/images/hero-main.jpg" alt="Warm, light-filled living room designed by Ameerah Design Studio">
+    <div class="hero-carousel" id="heroCarousel">
+      <img class="hero-slide active" src="assets/images/hero-1.jpg" alt="Ameerah Design Studio project 1">
+      <img class="hero-slide" src="assets/images/hero-2.jpg" alt="Ameerah Design Studio project 2">
+      <img class="hero-slide" src="assets/images/hero-3.jpg" alt="Ameerah Design Studio project 3">
+      <img class="hero-slide" src="assets/images/hero-4.jpg" alt="Ameerah Design Studio project 4">
+      <img class="hero-slide" src="assets/images/hero-5.jpg" alt="Ameerah Design Studio project 5">
+      <img class="hero-slide" src="assets/images/hero-6.jpg" alt="Ameerah Design Studio project 6">
+      <img class="hero-slide" src="assets/images/hero-7.jpg" alt="Ameerah Design Studio project 7">
+      <img class="hero-slide" src="assets/images/hero-8.jpg" alt="Ameerah Design Studio project 8">
+      <img class="hero-slide" src="assets/images/hero-9.jpg" alt="Ameerah Design Studio project 9">
+      <img class="hero-slide" src="assets/images/hero-10.jpg" alt="Ameerah Design Studio project 10">
+    </div>
+
     <div class="hero-overlay">
       <h1 class="hero-heading">Timeless spaces, shaped around the way you live.</h1>
       <p class="hero-sub">Thoughtful design, layered details, lasting comfort.</p>
@@ -57,12 +69,14 @@
         <a href="#contact" class="btn btn-light">Contact Us</a>
       </div>
     </div>
+
+    <div class="hero-dots" id="heroDots"></div>
   </div>
 </section>
 
 <!-- ===================== ABOUT + WHY CHOOSE US ===================== -->
 <section class="why-choose" id="about">
-  <div class="container why-grid">
+  <div class="container why-grid reveal">
     <div class="about-col">
       <h2>We are a creative interior and architect design company</h2>
       <div class="about-image-stack">
@@ -118,7 +132,7 @@
   <div class="container">
     <p class="eyebrow eyebrow-center">Our Services</p>
 
-    <div class="services-grid">
+    <div class="services-grid reveal-stagger">
       <div class="service-card">
         <div class="feature-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg>
@@ -156,33 +170,33 @@
 
 <!-- ===================== STATS ===================== -->
 <section class="stats-bar">
-  <div class="container stats-grid">
+  <div class="container stats-grid reveal-stagger">
     <div class="stat-item">
       <div class="feature-icon stat-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg>
       </div>
-      <div class="stat-number">60+</div>
+      <div class="stat-number" data-count="60" data-suffix="+">0+</div>
       <div class="stat-label">Projects Completed</div>
     </div>
     <div class="stat-item">
       <div class="feature-icon stat-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 14.6 8.6 21.8 9.3 16.3 13.9 18 21 12 17.3 6 21 7.7 13.9 2.2 9.3 9.4 8.6z"/></svg>
       </div>
-      <div class="stat-number">5</div>
+      <div class="stat-number" data-count="5" data-suffix="">0</div>
       <div class="stat-label">Awards Winner</div>
     </div>
     <div class="stat-item">
       <div class="feature-icon stat-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="3.2"/><path d="M2.5 20a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="9" r="2.6"/><path d="M14.8 20a4.6 4.6 0 0 1 7.7-3.4"/></svg>
       </div>
-      <div class="stat-number">30+</div>
+      <div class="stat-number" data-count="30" data-suffix="+">0+</div>
       <div class="stat-label">Skilled Workforce</div>
     </div>
     <div class="stat-item">
       <div class="feature-icon stat-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
       </div>
-      <div class="stat-number">10+</div>
+      <div class="stat-number" data-count="10" data-suffix="+">0+</div>
       <div class="stat-label">Years of Experience</div>
     </div>
   </div>
@@ -191,7 +205,7 @@
 <!-- ===================== PROJECTS ===================== -->
 <section class="projects" id="portfolio">
   <div class="container">
-    <div class="projects-header">
+    <div class="projects-header reveal">
       <h2>We create spaces you'll love.</h2>
     </div>
 
@@ -200,7 +214,7 @@
       <a href="#portfolio" class="filter-pill active">All Projects</a>
     </div>
 
-    <div class="project-grid" id="projectGrid">
+    <div class="project-grid reveal-stagger" id="projectGrid">
       <article class="project-card">
         <div class="project-image"><img src="assets/images/project-bedroom.jpg" alt="Serene bedroom retreat"></div>
         <div class="project-meta"><h3>Serene Bedroom Retreat</h3></div>
@@ -237,13 +251,13 @@
 <!-- ===================== FEATURED WORK ===================== -->
 <section class="featured-work" id="gallery">
   <div class="container">
-    <div class="featured-header">
+    <div class="featured-header reveal">
       <p class="eyebrow">Featured Work</p>
       <h2>A double-height home where light leads the design.</h2>
       <p class="featured-sub">Our most ambitious residence to date — sculptural architecture paired with soft, livable interiors. Watch the walkthrough.</p>
     </div>
 
-    <a href="#" class="featured-banner" aria-label="Play the featured project walkthrough">
+    <a href="#" class="featured-banner reveal" aria-label="Play the featured project walkthrough">
       <img src="assets/images/featured-work.jpg" alt="Double-height living room with statement chandelier">
       <span class="play-button" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
@@ -255,12 +269,12 @@
 <!-- ===================== TESTIMONIALS ===================== -->
 <section class="testimonials">
   <div class="container">
-    <div class="testimonials-header">
+    <div class="testimonials-header reveal">
       <p class="eyebrow">Testimonials</p>
       <h2>What our clients are saying.</h2>
     </div>
 
-    <div class="testimonial-grid">
+    <div class="testimonial-grid reveal-stagger">
       <div class="testimonial-card">
         <div class="quote-mark">“</div>
         <p class="quote">We wanted a house that felt modern but still had a few traditional details we grew up with. Ameerah Design team listened, suggested better options, and never rushed us. The final outcome was exactly what we imagined — clean, simple, and full of warmth.</p>
@@ -285,13 +299,13 @@
 <!-- ===================== CONTACT ===================== -->
 <section class="contact-section" id="contact">
   <div class="container">
-    <div class="contact-heading">
+    <div class="contact-heading reveal">
       <h2>Let's Create Your Dream Space</h2>
       <p class="eyebrow eyebrow-center">Get Started Today</p>
       <p class="contact-sub">Share your requirements and we'll reach out to you shortly.</p>
     </div>
 
-    <div class="contact-grid">
+    <div class="contact-grid reveal">
       <div class="contact-image">
         <img src="assets/images/contact.jpg" alt="Cozy reading corner with armchair and lamp">
       </div>
@@ -350,7 +364,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="#" class="logo"><img src="assets/images/logo.svg" alt="Ameerah Design Studio"></a>
+        <a href="#" class="logo footer-logo"><img src="assets/images/logo-footer.svg" alt="Ameerah Design Studio"></a>
         <p>Timeless spaces, shaped around the way you live. Creative interior and architecture design.</p>
       </div>
 
@@ -375,11 +389,17 @@
 
       <div class="footer-col">
         <h4>Follow Us On</h4>
-        <ul>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">LinkedIn</a></li>
-          <li><a href="#">Youtube</a></li>
-        </ul>
+        <div class="social-icons">
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M14 9h3V5.5h-3A4 4 0 0 0 10 9.5V12H7v3.5h3V21h3.5v-5.5H17l.6-3.5h-3.6V9.8A.8.8 0 0 1 14.8 9z"/></svg>
+          </a>
+          <a href="#" aria-label="Google">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><text x="12" y="16.5" font-family="Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#2A2620" stroke="none">G</text></svg>
+          </a>
+        </div>
       </div>
 
       <div class="footer-col">

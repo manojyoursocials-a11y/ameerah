@@ -13,8 +13,9 @@ A static, no-build website (plain HTML/CSS/JS) ready to push to GitHub and deplo
 │   └── script.js
 └── assets/
     └── images/
-        ├── logo.svg              ← replace with your client's logo
-        ├── hero-main.jpg         ← full-bleed hero banner (behind the headline)
+        ├── logo.svg              ← header logo — replace with your client's logo
+        ├── logo-footer.svg       ← footer logo (square, ~500×500) — replace with a square mark
+        ├── hero-1.jpg … hero-10.jpg   ← 10-slide hero carousel (auto-plays, swap any/all)
         ├── about-primary.jpg     ← large image in the "We are a creative..." stack
         ├── about-secondary.jpg   ← smaller overlapping image in that stack
         ├── project-bedroom.jpg
@@ -29,16 +30,24 @@ A static, no-build website (plain HTML/CSS/JS) ready to push to GitHub and deplo
 
 ## Page structure (matches the latest wireframe)
 
-1. **Header** — top utility row (nav + Say Hi / Get Started), centered logo row below it
-2. **Hero** — full-bleed image with centered headline, subtext, and two buttons overlaid
-3. **About + Why Choose Us** — left: heading with a stacked pair of images; right: eyebrow, intro paragraph, 2×2 process grid (Concept & Vision, Space Planning, Material & Styling, Execution & Finish)
-4. **Our Services** — dark band with 4 service cards (Architecture, Custom Furniture, Interior Design, Styling)
-5. **Stats** — 4 stat icons/numbers (Projects, Awards, Workforce, Years)
-6. **Projects** — heading + single "All Projects" link + 3×2 project grid (name only, no category tag)
+1. **Header** — logo on the left, right next to the nav (Home first), with Say Hi / Get Started on the right
+2. **Hero** — 10-slide auto-playing crossfade carousel behind the centered headline, subtext, and buttons (pauses on hover, has dot controls, respects reduced-motion preference)
+3. **About + Why Choose Us** — left: heading with a stacked pair of images; right: eyebrow, intro paragraph, 2×2 process grid
+4. **Our Services** — dark band with 4 service cards
+5. **Stats** — 4 stat icons/numbers that count up into view as you scroll
+6. **Projects** — heading + single "All Projects" link + 3×2 project grid
 7. **Featured Work** — centered intro copy + full-width banner image with a play-button overlay
 8. **Testimonials** — 3 client quote cards
-9. **Contact** — centered "Get Started Today" heading, then image + form side by side
-10. **Footer** — 5 columns: brand, Quick Links, Services, Follow Us On, Contact Us
+9. **Contact** — centered "Get Started Today" heading, then an image and form of matching height and width side by side
+10. **Footer** — 5 columns: brand (larger square logo), Quick Links, Services, Follow Us On (Instagram / Facebook / Google icon circles), Contact Us
+
+## Animation notes
+
+- Sections fade/slide into view on scroll (`.reveal` / `.reveal-stagger` classes + `IntersectionObserver` in `js/script.js`)
+- Stat numbers count up once they scroll into view
+- Hero carousel auto-advances every 5s, pauses on hover, and has clickable dots
+- Icons, cards, and the nav links get subtle hover lift/underline treatments
+- All motion respects `prefers-reduced-motion` for accessibility
 
 ## Replacing the logo
 
