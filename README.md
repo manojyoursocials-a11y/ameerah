@@ -13,18 +13,32 @@ A static, no-build website (plain HTML/CSS/JS) ready to push to GitHub and deplo
 │   └── script.js
 └── assets/
     └── images/
-        ├── logo.svg            ← replace with your client's logo
-        ├── hero-main.jpg       ← placeholder photography (replace all of these)
-        ├── why-choose.jpg
+        ├── logo.svg              ← replace with your client's logo
+        ├── hero-main.jpg         ← full-bleed hero banner (behind the headline)
+        ├── about-primary.jpg     ← large image in the "We are a creative..." stack
+        ├── about-secondary.jpg   ← smaller overlapping image in that stack
         ├── project-bedroom.jpg
         ├── project-kitchen.jpg
         ├── project-study.jpg
         ├── project-bathroom.jpg
         ├── project-entryway.jpg
         ├── project-lounge.jpg
-        ├── featured-work.jpg
+        ├── featured-work.jpg     ← featured banner (with play-button overlay)
         └── contact.jpg
 ```
+
+## Page structure (matches the latest wireframe)
+
+1. **Header** — top utility row (nav + Say Hi / Get Started), centered logo row below it
+2. **Hero** — full-bleed image with centered headline, subtext, and two buttons overlaid
+3. **About + Why Choose Us** — left: heading with a stacked pair of images; right: eyebrow, intro paragraph, 2×2 process grid (Concept & Vision, Space Planning, Material & Styling, Execution & Finish)
+4. **Our Services** — dark band with 4 service cards (Architecture, Custom Furniture, Interior Design, Styling)
+5. **Stats** — 4 stat icons/numbers (Projects, Awards, Workforce, Years)
+6. **Projects** — heading + single "All Projects" link + 3×2 project grid (name only, no category tag)
+7. **Featured Work** — centered intro copy + full-width banner image with a play-button overlay
+8. **Testimonials** — 3 client quote cards
+9. **Contact** — centered "Get Started Today" heading, then image + form side by side
+10. **Footer** — 5 columns: brand, Quick Links, Services, Follow Us On, Contact Us
 
 ## Replacing the logo
 

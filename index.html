@@ -15,12 +15,7 @@
 
 <!-- ===================== HEADER ===================== -->
 <header class="site-header">
-  <div class="container">
-    <a href="#" class="logo">
-      <!-- REPLACE assets/images/logo.svg with your client's logo file -->
-      <img src="assets/images/logo.svg" alt="Ameerah Design Studio">
-    </a>
-
+  <div class="container header-top">
     <nav class="main-nav" id="mainNav">
       <ul>
         <li><a href="#home">Home</a></li>
@@ -32,49 +27,56 @@
       </ul>
     </nav>
 
-    <a href="#contact" class="btn btn-primary">Get Started</a>
+    <div class="header-actions">
+      <a href="#contact" class="btn btn-outline btn-small">Say Hi</a>
+      <a href="#contact" class="btn btn-primary btn-small">Get Started</a>
+    </div>
 
     <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
       <span></span><span></span><span></span>
     </button>
   </div>
+
+  <div class="container header-logo-row">
+    <a href="#" class="logo">
+      <!-- REPLACE assets/images/logo.svg with your client's logo file -->
+      <img src="assets/images/logo.svg" alt="Ameerah Design Studio">
+    </a>
+  </div>
 </header>
 
 <!-- ===================== HERO ===================== -->
 <section class="hero" id="home">
-  <div class="container">
-    <div class="hero-top">
+  <div class="hero-media">
+    <img src="assets/images/hero-main.jpg" alt="Warm, light-filled living room designed by Ameerah Design Studio">
+    <div class="hero-overlay">
       <h1 class="hero-heading">Timeless spaces, shaped around the way you live.</h1>
-      <div class="hero-side">
-        <p class="eyebrow" style="margin-bottom:0;">We are a creative interior &amp; architecture design company</p>
-        <p>Thoughtful design, layered details, and lasting comfort. We turn everyday rooms into spaces that feel unmistakably yours.</p>
-        <div class="hero-actions">
-          <a href="#portfolio" class="btn btn-primary">Our Portfolio ↗</a>
-          <a href="#contact" class="btn btn-outline">Say Hi</a>
-        </div>
+      <p class="hero-sub">Thoughtful design, layered details, lasting comfort.</p>
+      <div class="hero-actions">
+        <a href="#portfolio" class="btn btn-primary">Our Portfolio ↗</a>
+        <a href="#contact" class="btn btn-light">Contact Us</a>
       </div>
-    </div>
-
-    <div class="hero-image">
-      <img src="assets/images/hero-main.jpg" alt="Warm, light-filled living room designed by Ameerah Design Studio">
     </div>
   </div>
 </section>
 
-<!-- ===================== WHY CHOOSE US ===================== -->
+<!-- ===================== ABOUT + WHY CHOOSE US ===================== -->
 <section class="why-choose" id="about">
   <div class="container why-grid">
-    <div class="why-intro">
-      <p class="eyebrow">Why Choose Us</p>
-      <h2>Turning everyday spaces into something special.</h2>
-      <p>From bold ideas to the finest details, we create warm, well-designed spaces that help you visualize how you'll live. Our process is transparent and innovative, giving you full customization before we even begin execution.</p>
-      <div class="why-image">
-        <img src="assets/images/why-choose.jpg" alt="Warm dining nook with handmade pendant lights">
+    <div class="about-col">
+      <h2>We are a creative interior and architect design company</h2>
+      <div class="about-image-stack">
+        <img class="about-img-primary" src="assets/images/about-primary.jpg" alt="Sunlit living room with neutral furnishings">
+        <img class="about-img-secondary" src="assets/images/about-secondary.jpg" alt="Detail shot of styled tablescape">
       </div>
     </div>
 
-    <div class="why-features">
-      <div class="feature-grid">
+    <div class="why-col">
+      <p class="eyebrow">Why Choose Us</p>
+      <h2>Turning everyday spaces into something special.</h2>
+      <p>From bold ideas to the finest details, we offer warm, well-designed spaces that help you visualize your space. Our process is transparent and innovative, giving you full customization before we even begin execution.</p>
+
+      <div class="feature-grid feature-grid-2x2">
         <div class="feature-item">
           <div class="feature-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.6.6 1 1.4 1 2.5h6c0-1.1.4-1.9 1-2.5A6 6 0 0 0 12 3z"/></svg>
@@ -101,22 +103,6 @@
 
         <div class="feature-item">
           <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg>
-          </div>
-          <h3>Architecture</h3>
-          <p>Structural design that frames light and everyday living.</p>
-        </div>
-
-        <div class="feature-item">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V6a2 2 0 0 1 2-2h7l5 5v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M13 4v5h5"/></svg>
-          </div>
-          <h3>Custom Furniture</h3>
-          <p>Bespoke pieces crafted to fit your space perfectly.</p>
-        </div>
-
-        <div class="feature-item">
-          <div class="feature-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
           </div>
           <h3>Execution &amp; Finish</h3>
@@ -127,22 +113,75 @@
   </div>
 </section>
 
+<!-- ===================== OUR SERVICES ===================== -->
+<section class="services-band" id="services">
+  <div class="container">
+    <p class="eyebrow eyebrow-center">Our Services</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg>
+        </div>
+        <h3>Architecture</h3>
+        <p>Structural design that frames light and everyday living.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V6a2 2 0 0 1 2-2h7l5 5v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M13 4v5h5"/></svg>
+        </div>
+        <h3>Custom Furniture</h3>
+        <p>Bespoke pieces crafted to fit your space perfectly.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21v-7a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v7M9 10V6a3 3 0 0 1 6 0v4"/></svg>
+        </div>
+        <h3>Interior Design</h3>
+        <p>Full-service design from first sketch to final styling.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M3 12h3M18 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/><circle cx="12" cy="12" r="3.5"/></svg>
+        </div>
+        <h3>Styling</h3>
+        <p>Curated finishing touches that pull every room together.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===================== STATS ===================== -->
 <section class="stats-bar">
   <div class="container stats-grid">
     <div class="stat-item">
+      <div class="feature-icon stat-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg>
+      </div>
       <div class="stat-number">60+</div>
       <div class="stat-label">Projects Completed</div>
     </div>
     <div class="stat-item">
+      <div class="feature-icon stat-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 14.6 8.6 21.8 9.3 16.3 13.9 18 21 12 17.3 6 21 7.7 13.9 2.2 9.3 9.4 8.6z"/></svg>
+      </div>
       <div class="stat-number">5</div>
-      <div class="stat-label">Awards Won</div>
+      <div class="stat-label">Awards Winner</div>
     </div>
     <div class="stat-item">
+      <div class="feature-icon stat-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="3.2"/><path d="M2.5 20a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="9" r="2.6"/><path d="M14.8 20a4.6 4.6 0 0 1 7.7-3.4"/></svg>
+      </div>
       <div class="stat-number">30+</div>
       <div class="stat-label">Skilled Workforce</div>
     </div>
     <div class="stat-item">
+      <div class="feature-icon stat-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+      </div>
       <div class="stat-number">10+</div>
       <div class="stat-label">Years of Experience</div>
     </div>
@@ -153,47 +192,43 @@
 <section class="projects" id="portfolio">
   <div class="container">
     <div class="projects-header">
-      <div>
-        <p class="eyebrow">Projects</p>
-        <h2>We create spaces you'll love.</h2>
-      </div>
-      <div class="filter-pills">
-        <button class="filter-pill active" data-filter="all">All Projects</button>
-        <button class="filter-pill" data-filter="residential">Residential</button>
-        <button class="filter-pill" data-filter="workspace">Workspace</button>
-        <button class="filter-pill" data-filter="hospitality">Hospitality</button>
-      </div>
+      <h2>We create spaces you'll love.</h2>
+    </div>
+
+    <div class="projects-subheader">
+      <p class="eyebrow" style="margin:0;">Projects</p>
+      <a href="#portfolio" class="filter-pill active">All Projects</a>
     </div>
 
     <div class="project-grid" id="projectGrid">
-      <article class="project-card" data-category="residential">
+      <article class="project-card">
         <div class="project-image"><img src="assets/images/project-bedroom.jpg" alt="Serene bedroom retreat"></div>
-        <div class="project-meta"><h3>Serene Bedroom Retreat</h3><span class="project-tag">Residential</span></div>
+        <div class="project-meta"><h3>Serene Bedroom Retreat</h3></div>
       </article>
 
-      <article class="project-card" data-category="residential">
+      <article class="project-card">
         <div class="project-image"><img src="assets/images/project-kitchen.jpg" alt="Warm modern kitchen"></div>
-        <div class="project-meta"><h3>Warm Modern Kitchen</h3><span class="project-tag">Residential</span></div>
+        <div class="project-meta"><h3>Warm Modern Kitchen</h3></div>
       </article>
 
-      <article class="project-card" data-category="workspace">
+      <article class="project-card">
         <div class="project-image"><img src="assets/images/project-study.jpg" alt="The Study workspace"></div>
-        <div class="project-meta"><h3>The Study</h3><span class="project-tag">Workspace</span></div>
+        <div class="project-meta"><h3>The Study</h3></div>
       </article>
 
-      <article class="project-card" data-category="residential">
+      <article class="project-card">
         <div class="project-image"><img src="assets/images/project-bathroom.jpg" alt="Spa-style bathroom"></div>
-        <div class="project-meta"><h3>Spa Bathroom</h3><span class="project-tag">Residential</span></div>
+        <div class="project-meta"><h3>Spa Bathroom</h3></div>
       </article>
 
-      <article class="project-card" data-category="residential">
+      <article class="project-card">
         <div class="project-image"><img src="assets/images/project-entryway.jpg" alt="Sculptural entryway"></div>
-        <div class="project-meta"><h3>Sculptural Entryway</h3><span class="project-tag">Residential</span></div>
+        <div class="project-meta"><h3>Sculptural Entryway</h3></div>
       </article>
 
-      <article class="project-card" data-category="hospitality">
+      <article class="project-card">
         <div class="project-image"><img src="assets/images/project-lounge.jpg" alt="Reading lounge"></div>
-        <div class="project-meta"><h3>Reading Lounge</h3><span class="project-tag">Hospitality</span></div>
+        <div class="project-meta"><h3>Reading Lounge</h3></div>
       </article>
     </div>
   </div>
@@ -201,16 +236,19 @@
 
 <!-- ===================== FEATURED WORK ===================== -->
 <section class="featured-work" id="gallery">
-  <div class="container featured-grid">
-    <div class="featured-image">
-      <img src="assets/images/featured-work.jpg" alt="Double-height living room with statement chandelier">
-    </div>
-    <div class="featured-text">
+  <div class="container">
+    <div class="featured-header">
       <p class="eyebrow">Featured Work</p>
       <h2>A double-height home where light leads the design.</h2>
-      <p>Our most ambitious residence to date pairs sculptural architecture with soft, livable interiors. Curved furniture, layered stone, and a statement chandelier come together to create a space that feels both grand and grounded.</p>
-      <a href="#" class="btn btn-primary">Explore the project ↗</a>
+      <p class="featured-sub">Our most ambitious residence to date — sculptural architecture paired with soft, livable interiors. Watch the walkthrough.</p>
     </div>
+
+    <a href="#" class="featured-banner" aria-label="Play the featured project walkthrough">
+      <img src="assets/images/featured-work.jpg" alt="Double-height living room with statement chandelier">
+      <span class="play-button" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      </span>
+    </a>
   </div>
 </section>
 
@@ -225,19 +263,19 @@
     <div class="testimonial-grid">
       <div class="testimonial-card">
         <div class="quote-mark">“</div>
-        <p class="quote">We wanted a house that felt modern but still had a few traditional details we grew up with. The team listened, suggested better options, and never rushed us. The outcome was exactly what we imagined.</p>
+        <p class="quote">We wanted a house that felt modern but still had a few traditional details we grew up with. Ameerah Design team listened, suggested better options, and never rushed us. The final outcome was exactly what we imagined — clean, simple, and full of warmth.</p>
         <div class="testimonial-author"><strong>Layla &amp; Omar</strong><span>Private Residence</span></div>
       </div>
 
       <div class="testimonial-card">
         <div class="quote-mark">“</div>
-        <p class="quote">From the first concept to the final styling, everything was considered. Our home now feels calm, warm, and completely ours. We could not be happier with the result.</p>
+        <p class="quote">We wanted a house that felt modern but still had a few traditional details we grew up with. Ameerah Design team listened, suggested better options, and never rushed us. The final outcome was exactly what we imagined — clean, simple, and full of warmth.</p>
         <div class="testimonial-author"><strong>Sofia Haddad</strong><span>Apartment Renovation</span></div>
       </div>
 
       <div class="testimonial-card">
         <div class="quote-mark">“</div>
-        <p class="quote">Clean, simple, and full of warmth. They balanced our wishlist with smart design decisions and kept the process transparent the entire way through.</p>
+        <p class="quote">We wanted a house that felt modern but still had a few traditional details we grew up with. Ameerah Design team listened, suggested better options, and never rushed us. The final outcome was exactly what we imagined — clean, simple, and full of warmth.</p>
         <div class="testimonial-author"><strong>Yusuf Karim</strong><span>Family Villa</span></div>
       </div>
     </div>
@@ -246,61 +284,64 @@
 
 <!-- ===================== CONTACT ===================== -->
 <section class="contact-section" id="contact">
-  <div class="container contact-grid">
-    <div class="contact-info">
-      <p class="eyebrow">Get Started Today</p>
-      <h2>Let's create your dream space.</h2>
-      <p>Share your requirements and we'll reach out to you shortly to discuss how we can bring your vision to life.</p>
+  <div class="container">
+    <div class="contact-heading">
+      <h2>Let's Create Your Dream Space</h2>
+      <p class="eyebrow eyebrow-center">Get Started Today</p>
+      <p class="contact-sub">Share your requirements and we'll reach out to you shortly.</p>
+    </div>
+
+    <div class="contact-grid">
       <div class="contact-image">
         <img src="assets/images/contact.jpg" alt="Cozy reading corner with armchair and lamp">
       </div>
+
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Name *</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" required>
+          </div>
+        </div>
+
+        <div class="form-row" style="grid-template-columns:1fr;">
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="floor">Floor Configuration *</label>
+            <select id="floor" name="floor" required>
+              <option value="" disabled selected>Select option</option>
+              <option value="studio">Studio</option>
+              <option value="1bhk">1 BHK</option>
+              <option value="2bhk">2 BHK</option>
+              <option value="3bhk">3 BHK</option>
+              <option value="villa">Villa</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="budget">Budget Range *</label>
+            <select id="budget" name="budget" required>
+              <option value="" disabled selected>Select range</option>
+              <option value="low">Under $25k</option>
+              <option value="mid">$25k – $75k</option>
+              <option value="high">$75k – $150k</option>
+              <option value="premium">$150k+</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
     </div>
-
-    <form class="contact-form" id="contactForm">
-      <div class="form-row">
-        <div class="form-group">
-          <label for="name">Name *</label>
-          <input type="text" id="name" name="name" placeholder="Your full name" required>
-        </div>
-        <div class="form-group">
-          <label for="phone">Phone Number *</label>
-          <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" required>
-        </div>
-      </div>
-
-      <div class="form-row" style="grid-template-columns:1fr;">
-        <div class="form-group">
-          <label for="email">Email *</label>
-          <input type="email" id="email" name="email" placeholder="you@example.com" required>
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label for="floor">Floor Configuration *</label>
-          <select id="floor" name="floor" required>
-            <option value="" disabled selected>Select option</option>
-            <option value="studio">Studio</option>
-            <option value="1bhk">1 BHK</option>
-            <option value="2bhk">2 BHK</option>
-            <option value="3bhk">3 BHK</option>
-            <option value="villa">Villa</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="budget">Budget Range *</label>
-          <select id="budget" name="budget" required>
-            <option value="" disabled selected>Select range</option>
-            <option value="low">Under $25k</option>
-            <option value="mid">$25k – $75k</option>
-            <option value="high">$75k – $150k</option>
-            <option value="premium">$150k+</option>
-          </select>
-        </div>
-      </div>
-
-      <button type="submit" class="btn btn-primary">Submit Request</button>
-    </form>
   </div>
 </section>
 
@@ -311,21 +352,15 @@
       <div class="footer-brand">
         <a href="#" class="logo"><img src="assets/images/logo.svg" alt="Ameerah Design Studio"></a>
         <p>Timeless spaces, shaped around the way you live. Creative interior and architecture design.</p>
-        <div class="social-icons">
-          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-          <a href="#" aria-label="Twitter / X"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M4 4l16 16M20 4 4 20"/></svg></a>
-          <a href="#" aria-label="Pinterest"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9 17c1-3 1.5-6 1.5-8a2.5 2.5 0 0 1 5 0c0 2-1 4-1 5.5a1.5 1.5 0 0 0 3 .5"/></svg></a>
-        </div>
       </div>
 
       <div class="footer-col">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="#home">Home</a></li>
           <li><a href="#about">About Us</a></li>
           <li><a href="#services">Our Services</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact Us</a></li>
         </ul>
       </div>
 
@@ -334,9 +369,16 @@
         <ul>
           <li><a href="#services">Interior Design</a></li>
           <li><a href="#services">Architecture</a></li>
-          <li><a href="#services">Space Planning</a></li>
           <li><a href="#services">Custom Furniture</a></li>
-          <li><a href="#services">Styling</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Follow Us On</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Youtube</a></li>
         </ul>
       </div>
 
