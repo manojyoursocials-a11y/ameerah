@@ -654,12 +654,27 @@ p { color: var(--text-muted); margin: 0; }
 
 @media (max-width: 760px) {
   .container { padding: 0 20px; }
+
+  /* Header: hamburger on the left, logo centered.
+     header-left collapses (display:contents) so logo/nav become direct
+     flex children of header-top — this avoids putting a transform on an
+     ancestor of the fixed-position nav, which would break its overlay. */
+  .header-top { position: relative; }
+  .header-left { display: contents; }
+  .header-top .logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .nav-toggle { order: -1; display: block; }
+  .header-actions { order: 1; }
+
   .main-nav { position: fixed; top: 73px; left: 0; right: 0; background: var(--cream-soft);
     flex-direction: column; padding: 20px; border-bottom: 1px solid var(--border-soft);
     transform: translateY(-130%); transition: transform .3s ease; z-index: 99; }
   .main-nav.open { transform: translateY(0); }
   .main-nav ul { flex-direction: column; gap: 16px; }
-  .nav-toggle { display: block; }
   .header-actions .btn-primary { display: none; }
   .hero-overlay { padding: 40px 20px; }
   .hero-actions { flex-direction: column; width: 100%; }
@@ -667,11 +682,21 @@ p { color: var(--text-muted); margin: 0; }
   .services-grid { grid-template-columns: 1fr; }
   .project-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr; }
   .stats-grid { grid-template-columns: 1fr 1fr; }
   .projects-subheader { flex-direction: column; align-items: flex-start; gap: 14px; }
   .contact-grid { grid-template-columns: 1fr; }
   .contact-image { min-height: 240px; }
+
+  /* Footer: centered, single-column layout with more breathing room */
+  .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+  .footer-brand { display: flex; flex-direction: column; align-items: center; }
+  .footer-brand p { margin: 0 auto; }
+  .footer-logo img { width: 80px; height: 80px; }
+  .footer-col h4 { margin-bottom: 16px; }
+  .social-icons { justify-content: center; }
+  .footer-contact li { justify-content: center; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .footer-bottom .legal-links { justify-content: center; }
 }
 
 /* ===================== SCROLL-REVEAL ANIMATION ===================== */
