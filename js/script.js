@@ -74,32 +74,99 @@ if (revealEls.length && 'IntersectionObserver' in window) {
   revealEls.forEach(el => el.classList.add('in-view'));
 }
 
-// ===================== Animated stat counters =====================
-const statNumbers = document.querySelectorAll('.stat-number[data-count]');
+// ===================== Projects: filter + lightbox =====================
+const projectGrid = document.getElementById('projectGrid');
+const lightbox = document.getElementById('lightbox');
 
-if (statNumbers.length && 'IntersectionObserver' in window) {
-  const countObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      const el = entry.target;
-      const target = parseInt(el.dataset.count, 10) || 0;
-      const suffix = el.dataset.suffix || '';
-      const duration = 1400;
-      const startTime = performance.now();
+if (projectGrid && lightbox) {
+  const items = Array.from(projectGrid.querySelectorAll('.masonry-item'));
+  const pills = Array.from(document.querySelectorAll('.filter-pill[data-filter]'));
+  const lbImg = lightbox.querySelector('.lb-img');
+  const lbCap = lightbox.querySelector('.lb-caption');
+  const moreBtn = document.getElementById('projectsMore');
+  const PAGE = 12;
+  let filter = 'all';
+  let expanded = false;
+  let visible = items;
+  let index = 0;
 
-      function tick(now) {
-        const progress = Math.min((now - startTime) / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        const value = Math.round(eased * target);
-        el.textContent = value + suffix;
-        if (progress < 1) requestAnimationFrame(tick);
-      }
-      requestAnimationFrame(tick);
-      observer.unobserve(el);
+  function render() {
+    const matching = items.filter(it => filter === 'all' || it.dataset.project === filter);
+    items.forEach(it => it.classList.add('is-hidden'));
+    visible = expanded ? matching : matching.slice(0, PAGE);
+    visible.forEach(it => {
+      it.classList.remove('is-hidden');
+      it.classList.add('in-view');
     });
-  }, { threshold: 0.5 });
+    if (moreBtn) moreBtn.hidden = expanded || matching.length <= PAGE;
+  }
+  if (moreBtn) moreBtn.addEventListener('click', () => { expanded = true; render(); });
+  let lastFocus = null;
 
-  statNumbers.forEach(el => countObserver.observe(el));
+  pills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      filter = pill.dataset.filter;
+      expanded = false;
+      pills.forEach(p => {
+        const on = p === pill;
+        p.classList.toggle('active', on);
+        p.setAttribute('aria-pressed', on);
+      });
+      render();
+    });
+  });
+  render();
+
+  function show(i) {
+    index = (i + visible.length) % visible.length;
+    const item = visible[index];
+    const img = item.querySelector('img');
+    lbImg.src = img.currentSrc || img.src;
+    lbImg.alt = img.alt;
+    const name = item.querySelector('.mi-name').textContent;
+    const status = item.querySelector('.mi-status').textContent;
+    lbCap.innerHTML = `<strong>${name}</strong>${status} · ${index + 1} / ${visible.length}`;
+  }
+  function open(item) {
+    lastFocus = document.activeElement;
+    show(visible.indexOf(item));
+    lightbox.hidden = false;
+    document.body.style.overflow = 'hidden';
+    lightbox.querySelector('.lb-close').focus();
+  }
+  function close() {
+    lightbox.hidden = true;
+    document.body.style.overflow = '';
+    if (lastFocus) lastFocus.focus();
+  }
+
+  items.forEach(item => {
+    item.tabIndex = 0;
+    item.addEventListener('click', () => open(item));
+    item.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(item); }
+    });
+  });
+  lightbox.querySelector('.lb-close').addEventListener('click', close);
+  lightbox.querySelector('.lb-prev').addEventListener('click', () => show(index - 1));
+  lightbox.querySelector('.lb-next').addEventListener('click', () => show(index + 1));
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) close(); });
+  document.addEventListener('keydown', e => {
+    if (lightbox.hidden) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') show(index - 1);
+    if (e.key === 'ArrowRight') show(index + 1);
+  });
+
+  // Swipe on touch devices
+  let startX = null;
+  lightbox.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+  lightbox.addEventListener('touchend', e => {
+    if (startX === null) return;
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 50) show(index + (dx < 0 ? 1 : -1));
+    startX = null;
+  });
 }
 
 // ===================== Contact form (demo only) =====================

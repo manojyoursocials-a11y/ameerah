@@ -18,12 +18,8 @@ A static, no-build website (plain HTML/CSS/JS) ready to push to GitHub and deplo
         ├── hero-1.jpg … hero-10.jpg   ← 10-slide hero carousel (auto-plays, swap any/all)
         ├── about-primary.jpg     ← large image in the "We are a creative..." stack
         ├── about-secondary.jpg   ← smaller overlapping image in that stack
-        ├── project-bedroom.jpg
-        ├── project-kitchen.jpg
-        ├── project-study.jpg
-        ├── project-bathroom.jpg
-        ├── project-entryway.jpg
-        ├── project-lounge.jpg
+        ├── projects/             ← masonry gallery photos: <project>-NN.jpg (azure, rapuram, adaia, amara, quadrant)
+        ├── favicon.png           ← browser tab icon (from the official logo)
         ├── featured-work.jpg     ← featured banner (with play-button overlay)
         └── contact.jpg
 ```
