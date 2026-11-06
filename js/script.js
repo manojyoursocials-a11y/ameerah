@@ -169,6 +169,30 @@ if (projectGrid && lightbox) {
   });
 }
 
+// ===================== Featured walkthrough video =====================
+const fBanner = document.getElementById('featuredBanner');
+const fVideo = document.getElementById('featuredVideo');
+const fPlay = document.getElementById('featuredPlay');
+if (fBanner && fVideo && fPlay) {
+  const pauseIcon = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>';
+  const playIcon = fPlay.innerHTML;
+  const toggle = () => {
+    if (fVideo.paused) {
+      fVideo.play();
+      fBanner.classList.add('is-playing');
+      fPlay.innerHTML = pauseIcon;
+      fPlay.setAttribute('aria-label', 'Pause the Azure walkthrough');
+    } else {
+      fVideo.pause();
+      fBanner.classList.remove('is-playing');
+      fPlay.innerHTML = playIcon;
+      fPlay.setAttribute('aria-label', 'Play the Azure walkthrough');
+    }
+  };
+  fPlay.addEventListener('click', toggle);
+  fVideo.addEventListener('click', toggle);
+}
+
 // ===================== Contact form (demo only) =====================
 // This form does not send data anywhere yet — wire it up to your email
 // service, form backend (e.g. Formspree, Resend), or CRM of choice.

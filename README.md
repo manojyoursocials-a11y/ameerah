@@ -15,13 +15,14 @@ A static, no-build website (plain HTML/CSS/JS) ready to push to GitHub and deplo
     └── images/
         ├── logo.svg              ← header logo — replace with your client's logo
         ├── logo-footer.svg       ← footer logo (square, ~500×500) — replace with a square mark
-        ├── hero-1.jpg … hero-10.jpg   ← 10-slide hero carousel (auto-plays, swap any/all)
+        ├── hero-1.jpg … hero-8.jpg    ← hero carousel (Azure, landscape 2400×1350); add/remove <img> tags to change count
         ├── about-primary.jpg     ← large image in the "We are a creative..." stack
         ├── about-secondary.jpg   ← smaller overlapping image in that stack
         ├── projects/             ← masonry gallery photos: <project>-NN.jpg (azure, rapuram, adaia, amara, quadrant)
         ├── favicon.png           ← browser tab icon (from the official logo)
         ├── featured-work.jpg     ← featured banner (with play-button overlay)
         └── contact.jpg
+    └── video/azure-walkthrough.mp4  ← Featured Work slideshow (1920×1080, 46 s)
 ```
 
 ## Page structure (matches the latest wireframe)
