@@ -27,14 +27,14 @@ A static, no-build website (plain HTML/CSS/JS) ready to push to GitHub and deplo
 
 ## Page structure (matches the latest wireframe)
 
-1. **Header** — logo on the left, next to the nav (Home first); "Say Hi" is plain text, "Book a Call" is the only button
+1. **Header** — logo on the left, next to the nav (Home first); "Say Hi" is plain text, "Email Us" is the only button
 2. **Hero** — 10-slide auto-playing crossfade carousel behind the centered headline, subtext, and buttons (pauses on hover, has dot controls, respects reduced-motion preference)
 3. **About** — centered heading ("We are a creative interior and architect studio company") with a stacked pair of images below it
 4. **Our Services** — dark band with 4 service cards
 5. **Stats** — 3 stat icons/numbers (Awards Winner, Skilled Workforce, Years of Experience) that count up into view as you scroll
 6. **Projects** — heading + single "All Projects" link + 3×2 project grid
 7. **Featured Work** — centered intro copy + full-width banner image with a play-button overlay
-8. **Contact** — centered "Get Started Today" heading, then an equally sized image and form (Name, Phone, Email only) with a "Book a Call" button
+8. **Contact** — centered "Get Started Today" heading, then an equally sized image and form with the logo, then Name, Phone, Requirements and a "Send Email" button that opens a pre-filled email to info@ and admin@ameerahdesignstudio.com
 9. **Footer** — 5 columns: brand (larger square logo), Quick Links, Services, Follow Us On (Instagram / Facebook / Google icon circles), Contact Us
 
 Note: the Testimonials section and the Floor Configuration / Budget Range form fields have been removed per the latest wireframe.

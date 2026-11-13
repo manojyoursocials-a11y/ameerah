@@ -56,8 +56,64 @@ if (carousel && dotsWrap) {
   carousel.closest('.hero-media').addEventListener('mouseleave', start);
 }
 
+// ===================== Subtle scroll motion: auto-tagging =====================
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+// Section headings rise from a soft blur
+document.querySelectorAll('main section h2, section h2').forEach(h => {
+  if (!h.closest('.hero, .reveal, .reveal-stagger')) h.classList.add('reveal-text');
+});
+// Eyebrows and stand-alone paragraphs fade up
+document.querySelectorAll('section > .container > .eyebrow, .projects-subheader').forEach(el => {
+  if (!el.closest('.reveal, .reveal-stagger')) el.classList.add('reveal');
+});
+// Images unmask softly
+document.querySelectorAll('.about-img-primary').forEach(el => el.classList.add('reveal-img'));
+// About feature grid staggers in
+document.querySelectorAll('.feature-grid').forEach(el => {
+  if (!el.closest('.reveal, .reveal-stagger')) el.classList.add('reveal-stagger');
+});
+// Parallax layers (speed: px of drift per px scrolled, relative to viewport centre)
+[['.about-img-primary', 0.04], ['.about-img-secondary', -0.08], ['.contact-image > img', 0.06],
+ ['.featured-banner > video', 0.05], ['.hero-carousel', 0.18]].forEach(([sel, speed]) => {
+  document.querySelectorAll(sel).forEach(el => { el.dataset.parallax = speed; });
+});
+
+// ===================== Scroll-linked effects (parallax, header, progress) =====================
+const header = document.querySelector('.site-header');
+const progress = document.createElement('div');
+progress.className = 'scroll-progress';
+progress.setAttribute('aria-hidden', 'true');
+document.body.appendChild(progress);
+const parallaxEls = reduceMotion ? [] : Array.from(document.querySelectorAll('[data-parallax]'));
+let ticking = false;
+function onScroll() {
+  const y = window.scrollY;
+  const vh = window.innerHeight;
+  if (header) header.classList.toggle('is-scrolled', y > 20);
+  const max = document.documentElement.scrollHeight - vh;
+  progress.style.setProperty('--sp', max > 0 ? (y / max).toFixed(4) : 0);
+  parallaxEls.forEach(el => {
+    const r = el.getBoundingClientRect();
+    if (r.bottom < -100 || r.top > vh + 100) return;
+    const speed = parseFloat(el.dataset.parallax);
+    if (el.classList.contains('hero-carousel')) {
+      // Hero drifts down slower than the page, starting from rest at the top
+      el.style.translate = `0 ${Math.min(y * speed, 160).toFixed(1)}px`;
+      return;
+    }
+    const offset = (r.top + r.height / 2 - vh / 2) * speed;
+    el.style.translate = `0 ${Math.max(-40, Math.min(40, -offset)).toFixed(1)}px`;
+  });
+  ticking = false;
+}
+window.addEventListener('scroll', () => {
+  if (!ticking) { requestAnimationFrame(onScroll); ticking = true; }
+}, { passive: true });
+window.addEventListener('resize', onScroll);
+onScroll();
+
 // ===================== Scroll-reveal animations =====================
-const revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
+const revealEls = document.querySelectorAll('.reveal, .reveal-stagger, .reveal-img, .reveal-text');
 
 if (revealEls.length && 'IntersectionObserver' in window) {
   const revealObserver = new IntersectionObserver((entries, observer) => {
@@ -193,14 +249,40 @@ if (fBanner && fVideo && fPlay) {
   fVideo.addEventListener('click', toggle);
 }
 
-// ===================== Contact form (demo only) =====================
-// This form does not send data anywhere yet — wire it up to your email
-// service, form backend (e.g. Formspree, Resend), or CRM of choice.
+// ===================== Contact form → email =====================
+// Opens the visitor's email app with a pre-filled message to both studio inboxes.
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    alert('Thanks! This is a demo form — connect it to your email service or form backend to start receiving real submissions.');
-    contactForm.reset();
+    const fields = ['name', 'phone', 'requirements'].map(id => contactForm.querySelector('#' + id));
+    let firstBad = null;
+    fields.forEach(f => {
+      const bad = !f.value.trim();
+      f.classList.toggle('is-invalid', bad);
+      f.setAttribute('aria-invalid', bad);
+      if (bad && !firstBad) firstBad = f;
+    });
+    if (firstBad) { firstBad.focus(); return; }
+
+    const [name, phone, req] = fields.map(f => f.value.trim());
+    const to = contactForm.dataset.mailto;
+    const subject = `New enquiry from ${name}`;
+    const body = `Hello Ameerah Design Studio,
+
+Name: ${name}
+Phone: ${phone}
+
+Requirements:
+${req}
+
+Thank you.`;
+    window.location.href = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+  contactForm.addEventListener('input', (e) => {
+    if (e.target.classList.contains('is-invalid') && e.target.value.trim()) {
+      e.target.classList.remove('is-invalid');
+      e.target.removeAttribute('aria-invalid');
+    }
   });
 }
